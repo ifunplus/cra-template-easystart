@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 1361324 */
+  src: url('iconfont.woff2?t=1634032650106') format('woff2'),
+       url('iconfont.woff?t=1634032650106') format('woff'),
+       url('iconfont.ttf?t=1634032650106') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-security:before {
+  content: "\e63a";
+}
+
+.icon-phone:before {
+  content: "\e634";
+}
+
+.icon-process:before {
+  content: "\eb88";
+}
+
+.icon-entry:before {
+  content: "\eb89";
+}
+
+.icon-question-circle:before {
+  content: "\eb8a";
+}
+
+.icon-publish:before {
+  content: "\eb8b";
+}
+
+.icon-add-circle:before {
+  content: "\eb8c";
+}
+
+.icon-eye:before {
+  content: "\eb8d";
+}
+
+.icon-account:before {
+  content: "\eb8e";
+}
+
+.icon-page:before {
+  content: "\eb8f";
+}
+
+.icon-setting:before {
+  content: "\eb90";
+}
+
+.icon-save:before {
+  content: "\eb91";
+}
+
+.icon-manage:before {
+  content: "\eb92";
+}
+
+.icon-use-note:before {
+  content: "\eb93";
+}
+
+.icon-help-note:before {
+  content: "\eb94";
+}
+
+.icon-team:before {
+  content: "\e7c7";
+}
+

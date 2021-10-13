@@ -1,0 +1,16 @@
+.title {
+  width: 300px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.version {
+  color: #999;
+  text-align: right;
+  font-size: 12px;
+}
+
+.form__button {
+  width: 100%;
+  margin: 4px 0;
+}
