@@ -76,19 +76,33 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "analyze": "source-map-explorer build/static/js/main.*",
     "start": "craco start",
+    "start:https": "HTTPS=true npm start",
     "build": "craco build",
     "test": "craco test",
+    "test:coverage": "rm -rf coverage && npm test -- --coverage",
+    "test:debug": "react-scripts --inspect-brk test --runInBand",
     "eject": "craco eject",
     "clean-files": "rm -rf template",
-    "copy-files": "mkdir template && cp -a ./src/. template/src && cp -a ./public/. template/public &&  cp -a ./cypress/. template/cypress && cp .eslintignore .eslintrc.js .prettierrc.js .npmrc craco.config.js cypress.json gitignore README.md template/",
+    "copy-files": "mkdir template && cp -a ./src/. template/src && cp -a ./public/. template/public &&  cp -a ./cypress/. template/cypress && cp .env .env.development .env.production .env.test .eslintignore .eslintrc.js .prettierrc.js .npmrc craco.config.js cypress.json gitignore README.md template/",
     "prepublishOnly": "yarn clean-files && yarn copy-files",
     "commit": "npx git-cz",
-
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "fix": "eslint src --ext .js,.jsx,.ts,.tsx  --fix",
     "format": "prettier --write src/**/*.{ts,tsx}",
     "e2e": "cypress run --spec 'cypress/integration/*'"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,less,md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.7",
@@ -105,12 +119,15 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "faker": "^5.5.2",
+    "husky": "^7.0.2",
     "json-server": "^0.16.3",
+    "lint-staged": "^11.2.3",
     "mocha": "^9.0.1",
     "mocha-junit-reporter": "^2.0.0",
     "mochawesome": "^6.2.2",
     "mochawesome-merge": "^4.2.0",
-    "prettier": "^2.3.2",
+    "prettier": "^2.4.1",
+    "react-test-renderer": "^17.0.2",
     "source-map-explorer": "^2.5.2"
   },
   "eslintConfig": {

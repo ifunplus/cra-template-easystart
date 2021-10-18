@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table,Button } from 'antd';
-import { mock_getUsers,mock_createUser,mock_delUser } from '../../mock/apiMock';
+import { mock_getUsers,mock_createUser,mock_delUser } from '../../network/apiMock';
 const columns = [
   {
     title: 'id',
@@ -52,6 +52,7 @@ function index() {
         account: 'zhangsan',
         name: 'zhangsan',
         accountState: 1,
+        gender:'female',
         lastOnline: '2021-10-12T20:38:57.778Z',
         organization: '组织三',
         department: '部门一',

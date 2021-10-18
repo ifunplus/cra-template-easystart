@@ -48,7 +48,7 @@ function App(props) {
               <Route path="/404" component={Result404} />
               <Route path="/500" component={Result500} />
               <Route path="/empty" component={ResultEmpty} />
-              <Route path="/main" component={MainPage} />
+              <PrivateRoute path="/main" component={MainPage} />
               <Route path="/view" component={ViewPage} />
               <Route path="/icon" component={IconPage} />
               <Route path="/mockdata" component={MockdataPage} />

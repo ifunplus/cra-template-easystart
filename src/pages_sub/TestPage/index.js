@@ -5,7 +5,8 @@ import { connect } from 'react-redux'
 export const index = (props) => {
     return (
         <div>
-            测试界面
+            <p>yarn add --dev react-test-renderer</p>
+            <h1>snapshot Test</h1>
         </div>
     )
 }

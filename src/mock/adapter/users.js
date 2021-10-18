@@ -1,5 +1,5 @@
 import faker from 'faker';
-import baseAdapter,{getRandomItemFromArray} from './base'
+import baseAdapter,{getRandomItemFromArray} from '../base'
 faker.locale = 'zh_CN';
 
 let fakedata = [];
@@ -21,7 +21,7 @@ while (i < 50) {
     mobileNumber: faker.phone.phoneNumber(),
     annoNums: 3,
     reviewNums: 5,
-    state: getRandomItemFromArray(stateArr)
+    state: getRandomItemFromArray(stateArr),
   });
   i++;
 }

@@ -15,11 +15,6 @@ export default function request(url, requestParams) {
     headers = {}
   } = requestParams;
   return new Promise((resolve, reject) => {
-    // if (url.includes("/api")) {
-    //   axios.defaults.baseURL = '';
-    // } else {
-    //   axios.defaults.baseURL = '/app';
-    // }
     axios({
       url,
       method,

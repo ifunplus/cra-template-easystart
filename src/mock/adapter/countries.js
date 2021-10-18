@@ -1,4 +1,4 @@
-import baseAdapter from './base'
+import baseAdapter from '../base'
 
 let fakedata = [
   { id: '1', name: 'Finland', capital: 'Helsinki' },

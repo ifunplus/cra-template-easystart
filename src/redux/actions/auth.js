@@ -1,8 +1,8 @@
 import { message } from 'antd';
 import axios from 'axios';
 import intl from 'react-intl-universal';
-import { login, register } from '../../network/api';
-import { getUserMe, clearLoginUser } from './currentUser';
+import { login } from '../../network/apiMock';
+import { getUser, clearLoginUser } from './currentUser';
 import { encryptPassword } from '../../utils/encryptUtils';
 function saveTokens(accessToken) {
   localStorage.setItem('accessToken', accessToken);
@@ -31,7 +31,7 @@ function _login(account, password) {
         setAuthToken();
         resolve(resp);
       })
-      .catch((error) => { });
+      .catch((error) => { console.log(error) });
   });
 }
 
@@ -40,7 +40,7 @@ export function userlogin(values) {
     const { account, password } = values;
     return await _login(account, password).then((resp) => {
       if (resp.status === 200) {
-        return dispatch(getUserMe()).then((res) => {
+        return dispatch(getUser(account)).then((res) => {
           return res;
         });
       }
@@ -54,29 +54,5 @@ export function userlogout() {
     localStorage.removeItem('TO_DO_WARNING');
     await dispatch(clearLoginUser());
     setAuthToken();
-  };
-}
-
-function _register(account, password) {
-  return new Promise((resolve, reject) => {
-    const hashPassword = encryptPassword(password);
-    login({ account, password: hashPassword })
-      .then((resp) => {
-        const { accessToken } = resp.data.data;
-        saveTokens(accessToken);
-        setAuthToken();
-        resolve(resp);
-      })
-      .catch((error) => { });
-  });
-}
-
-export function userRegister(values) {
-  return async (dispatch) => {
-    await _register(values).then((resp) => {
-      if (resp.status === 200) {
-        dispatch(getUserMe());
-      }
-    });
   };
 }
