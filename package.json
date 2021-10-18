@@ -1,6 +1,6 @@
 {
   "name": "cra-template-easystart",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "ifunplus",
   "private": false,
   "main": "template.json",
@@ -93,7 +93,6 @@
     "format": "prettier --write src/**/*.{ts,tsx}",
     "e2e": "cypress run --spec 'cypress/integration/*'",
     "cypress:open": "cypress open"
-
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,less,md}": [
