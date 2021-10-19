@@ -1,8 +1,5 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const targetHost = 'http://192.168.1.197:5000/';
-// "http://192.168.1.197:5000/"
-// "http://192.168.1.193:6688/"
-// "http://yapi.imsightmed.com/mock/57"
 
 module.exports = function (app) {
   app.use(
