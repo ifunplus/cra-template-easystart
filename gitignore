@@ -12,6 +12,9 @@ node_modules/
 # production
 /build
 
+# publish
+/template
+
 # misc
 .DS_Store
 .env.local
